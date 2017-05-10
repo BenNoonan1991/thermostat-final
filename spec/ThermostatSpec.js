@@ -51,5 +51,21 @@ describe ('Thermostat', function(){
     thermostat.up();
     thermostat.reset_temp();
     expect(thermostat.temperature).toEqual(20);
-  })
+  });
+
+  it('returns low energy under 18 temperature', function(){
+    for(var i = 0; i < 3; i++){
+    thermostat.down();}
+    expect(thermostat.getEnergy()).toEqual('low-energy');
+  });
+
+  it('returns medium energy under 25 temperature', function(){
+    expect(thermostat.getEnergy()).toEqual('medium-energy');
+  });
+
+  it('returns high energy over 25 temperature', function(){
+    for(var i = 0; i < 6; i++){
+    thermostat.up();}
+    expect(thermostat.getEnergy()).toEqual('high-energy');
+  });
 });
