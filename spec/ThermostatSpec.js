@@ -23,4 +23,8 @@ describe ('Thermostat', function(){
     thermostat.down();}
     expect(thermostat.temperature).toEqual(10);
   });
+
+  it('powersaving mode is on by default', function() {
+    expect(thermostat.powerSavingModeOn).toBe(true);
+  });
 });
