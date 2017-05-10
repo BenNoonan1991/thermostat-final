@@ -11,6 +11,8 @@ return this.temperature;
 };
 
 Thermostat.prototype.up = function () {
+  if (this.isMaxTemp())
+  {return this.temperature;}
   this.temperature += 1;
 };
 
@@ -22,12 +24,15 @@ Thermostat.prototype.down = function() {
 };
 
 Thermostat.prototype.powerSavingModeOff = function () {
-  this.powerSavingMode = false
+  this.powerSavingMode = false;
 };
 
-// Thermostat.prototype.isMaxTemp = function () {
-//   if (this.powerSavingModeOn === true) {
-//     return this.MAX_TEMP_PSM_ON;
-//   }
-//   return this.temperature === this.MAX_TEMP_PSM_OFF;
-// };
+Thermostat.prototype.powerSavingModeOn = function () {
+  return this.powerSavingMode;
+};
+
+Thermostat.prototype.isMaxTemp = function () {
+  if (this.powerSavingMode === true)
+    {return this.temperature === this.MAX_TEMP_PSM_ON;}
+  return this.temperature === this.MAX_TEMP_PSM_OFF;
+ };

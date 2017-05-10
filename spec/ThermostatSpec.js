@@ -25,18 +25,25 @@ describe ('Thermostat', function(){
   });
 
   it('powersaving mode is on by default', function() {
-    expect(thermostat.powerSavingMode).toBe(true);
+    expect(thermostat.powerSavingModeOn()).toBe(true);
   });
 
   it('can turn off powersaving mode', function() {
     thermostat.powerSavingModeOff();
-    expect(thermostat.powerSavingMode).toBe(false)
+    expect(thermostat.powerSavingModeOn()).toBe(false);
   });
 
-  // it('max temperature is 25 when PSM is on', function() {
-  //   thermostat.isMaxTemp();
-  //   for(var i = 0; i < 6; i++){
-  //   thermostat.up();}
-  //   expect(thermostat.temperature).toEqual(25);
-  // });
+  it('max temperature is 25 when PSM is on', function() {
+    thermostat.powerSavingModeOn();
+    for(var i = 0; i < 6; i++){
+    thermostat.up();}
+    expect(thermostat.temperature).toEqual(25);
+  });
+
+  it('max temperature is 32 when PSM is off', function() {
+    thermostat.powerSavingModeOff();
+    for(var i = 0; i < 13; i++){
+    thermostat.up();}
+    expect(thermostat.temperature).toEqual(32);
+  });
 });
