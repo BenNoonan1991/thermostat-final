@@ -23,6 +23,10 @@ Thermostat.prototype.down = function() {
     this.temperature -=1;
 };
 
+Thermostat.prototype.reset_temp = function () {
+  this.temperature = 20;
+};
+
 Thermostat.prototype.powerSavingModeOff = function () {
   this.powerSavingMode = false;
 };
