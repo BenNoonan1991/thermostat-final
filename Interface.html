@@ -1,0 +1,48 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Thermostat</title>
+  </head>
+
+<link rel='stylesheet' href='./switch.css' >
+<h1>powerSavingMode</h1>
+<label class="switch">
+  <input type="checkbox" id="powerSavingMode">
+  <div class="slider round"></div>
+</label>
+<br>
+<br>
+
+<button type="submit" id='up' name='temperature up'>Increase Temperature</button><br>
+<button type="submit" id='down' name = 'temperature down'>Decrease Temperature</button><br>
+<button type="submit" id='reset' name = 'reset temp'>"Reset Temperature"</button>
+<br>
+
+<link rel='stylesheet' href='./display.css' >
+<div class='container'>
+  <div class='card temp'>
+    <div class='inner'>
+      <div class='icon'></div>
+      <div class='title'>
+        <div class='text' id='temperature' >TEMPERATURE</div>
+      </div>
+      <div class='number'>thermostat.temperature()</div>
+      <div class='measure'>CELCIUS</div>
+    </div>
+  </div>
+  <div class='card energy'>
+    <div class='inner'>
+      <div class='icon'></div>
+      <div class='title'>
+        <div class='text' id='energy' >ENERGY</div>
+      </div>
+      <div class='number'>thermostat.getEnergy()</div>
+      <div class='measure'>kW/HOUR</div>
+    </div>
+  </div>
+</div>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="src/Thermostat.js"></script>
+</html>
