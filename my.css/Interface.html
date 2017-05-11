@@ -1,8 +1,8 @@
 
 <!DOCTYPE HTML>
 <html>
-<link rel='stylesheet' href='../new.css' >
-powerSavingMode 
+<link rel='stylesheet' href='../switch.css' >
+powerSavingMode
 <label class="switch">
   <input type="checkbox" id="powerSavingMode">
   <div class="slider round"></div>
@@ -14,5 +14,14 @@ powerSavingMode
 <button type="submit" name = 'temperature down'>Decrease Temperature</button><br>
 
 <button type="submit" name = 'reset temp'>"Reset Temperature"</button>
+<br>
 
+The temperature is: <%= thermostat.temperature %> <br>
+Your current energy usages is: <%= thermostat.getEnergy%><br>
+The minimum temperature is: <%= thermostat.minimumTemperature%><br>
+<%if thermostat.powerSavingModeOn
+The maximum temperature is <%= thermostat.MAX_TEMP_PSM_ON%><br>
+else
+The maximum temperature is <%= thermostat.MAX_TEMP_PSM_OFF%><br>
+end%>
 </html>

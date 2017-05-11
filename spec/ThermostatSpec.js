@@ -1,11 +1,11 @@
-describe ('Thermostat', function(){
+describe('Thermostat', function() {
   var thermostat;
 
-  beforeEach(function(){
+  beforeEach(function() {
     thermostat = new Thermostat();
   });
 
-  it("should start at 20 degrees", function(){
+  it("should start at 20 degrees", function() {
     expect(thermostat.temperature).toEqual(20);
   });
 
@@ -14,13 +14,14 @@ describe ('Thermostat', function(){
     expect(thermostat.temperature).toEqual(21);
   });
 
-  it('decreases temperature with down', function(){
+  it('decreases temperature with down', function() {
     thermostat.down();
     expect(thermostat.temperature).toEqual(19);
   });
   it('returns error if temperature is less than 10', function() {
-    for(var i = 0; i<11; i++){
-    thermostat.down();}
+    for (var i = 0; i < 11; i++) {
+      thermostat.down();
+    }
     expect(thermostat.temperature).toEqual(10);
   });
 
@@ -35,37 +36,41 @@ describe ('Thermostat', function(){
 
   it('max temperature is 25 when PSM is on', function() {
     thermostat.powerSavingModeOn();
-    for(var i = 0; i < 6; i++){
-    thermostat.up();}
+    for (var i = 0; i < 6; i++) {
+      thermostat.up();
+    }
     expect(thermostat.temperature).toEqual(25);
   });
 
   it('max temperature is 32 when PSM is off', function() {
     thermostat.powerSavingModeOff();
-    for(var i = 0; i < 13; i++){
-    thermostat.up();}
+    for (var i = 0; i < 13; i++) {
+      thermostat.up();
+    }
     expect(thermostat.temperature).toEqual(32);
   });
 
-  it('resets the temperature to 20', function(){
+  it('resets the temperature to 20', function() {
     thermostat.up();
     thermostat.reset_temp();
     expect(thermostat.temperature).toEqual(20);
   });
 
-  it('returns low energy under 18 temperature', function(){
-    for(var i = 0; i < 3; i++){
-    thermostat.down();}
+  it('returns low energy under 18 temperature', function() {
+    for (var i = 0; i < 3; i++) {
+      thermostat.down();
+    }
     expect(thermostat.getEnergy()).toEqual('low-energy');
   });
 
-  it('returns medium energy under 25 temperature', function(){
+  it('returns medium energy under 25 temperature', function() {
     expect(thermostat.getEnergy()).toEqual('medium-energy');
   });
 
-  it('returns high energy over 25 temperature', function(){
-    for(var i = 0; i < 6; i++){
-    thermostat.up();}
+  it('returns high energy over 25 temperature', function() {
+    for (var i = 0; i < 6; i++) {
+      thermostat.up();
+    }
     expect(thermostat.getEnergy()).toEqual('high-energy');
   });
 });
