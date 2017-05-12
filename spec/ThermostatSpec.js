@@ -18,6 +18,7 @@ describe('Thermostat', function() {
     thermostat.down();
     expect(thermostat.temperature).toEqual(19);
   });
+  
   it('returns error if temperature is less than 10', function() {
     for (var i = 0; i < 11; i++) {
       thermostat.down();

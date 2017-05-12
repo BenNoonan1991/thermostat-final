@@ -12,8 +12,9 @@ return this.temperature;
 };
 
 Thermostat.prototype.up = function () {
-  if (this.isMaxTemp())
-  {return this.temperature;}
+  if (this.temperature === this.isMaxTemp()){
+    return this.temperature;
+  }
   this.temperature += 1;
 };
 
