@@ -1,3 +1,15 @@
+.low-energy{
+  color: green;
+}
+
+.medium-energy{
+  color: black;
+}
+
+.high-energy{
+  color: red;
+}
+
 .container {
   width: 385px;
   height: 226px;

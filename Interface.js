@@ -5,6 +5,7 @@ $(document).ready(function() {
 
   function updateTemperature(){
     $('#temp_number').text(thermostat.temperature);
+    $('#temp_number').attr('class', thermostat.getEnergy());
   }
 
 
@@ -18,7 +19,7 @@ $(document).ready(function() {
     updateTemperature();
   });
 
-  $('#reset').on('select', function(){
+  $('#reset').on('click', function(){
     thermostat.reset_temp();
     updateTemperature();
   });
