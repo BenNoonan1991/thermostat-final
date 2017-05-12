@@ -1,40 +1,39 @@
-
-var thermostat = new Thermostat();
-
-function updateTemperature(){
-  $('#temp_number').text(thermostat.temperature);
-}
-
 $(document).ready(function() {
-  updateTemperature();
-});
+  var thermostat = new Thermostat();
 
-$('#up').on('click', function() { // event listener
-  thermostat.up(); // update model
-  updateTemperature(); // update view
-});
+  function updateTemperature(){
+    $('#temp_number').text(thermostat.temperature);
+  }
 
-$('#down').on('click', function(){
-  thermostat.down();
-  updateTemperature();
-});
+  $(document).ready(function() {
+    updateTemperature();
+  });
 
-$('#reset').on('click', function(){
-  thermostat.reset_temp();
-  updateTemperature();
-});
+  $('#up').on('click', function() {
+    thermostat.up();
+    updateTemperature();
+  });
 
-$ ('#on').on('select', function(){
- thermostat.powerSavingModeOn();
- updateTemperature();
- });
+  $('#down').on('click', function(){
+    thermostat.down();
+    updateTemperature();
+  });
 
- $ ('#off').on('select', function(){
-  thermostat.powerSavingModeOff();
-  updateTemperature();
+  $('#reset').on('click', function(){
+    thermostat.reset_temp();
+    updateTemperature();
+  });
+
+  $('#off').on('select', function(){
+    thermostat.powerSavingModeOff();
+    updateTemperature();
+
+  $('#on').on('select', function(){
+    thermostat.powerSavingModeOn();
+    updateTemperature();
+  });
   });
 
 
-$(document).ready(function() {
-$('#energy').text(thermostat.getEnergy);
+  $('#energy').text(thermostat.getEnergy);
 });
