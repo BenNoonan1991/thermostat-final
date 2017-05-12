@@ -7,10 +7,11 @@
 
 <link rel='stylesheet' href='./switch.css' >
 <h1>powerSavingMode</h1>
-<label class="switch">
-  <input type="checkbox" id="powerSavingMode">
-  <div class="slider round"></div>
-</label>
+<label for="flip-mini">Flip switch:</label>
+<select name="flip-mini" id="flip-mini" data-role="slider" data-mini="true">
+	<option value="off" id = 'on'>On</option>
+	<option value="on" id = 'off'>Off</option>
+</select>
 <br>
 <br>
 
@@ -27,22 +28,24 @@
       <div class='title'>
         <div class='text' id='temperature' >TEMPERATURE</div>
       </div>
-      <div class='number'>thermostat.temperature()</div>
-      <div class='measure'>CELCIUS</div>
+      <div class='number' id ='temp_number'>thermostat.temperature()</div>
+      <div class='measure'></div>
     </div>
   </div>
   <div class='card energy'>
     <div class='inner'>
       <div class='icon'></div>
       <div class='title'>
-        <div class='text' id='energy' >ENERGY</div>
+        <div class='text'>ENERGY</div>
       </div>
-      <div class='number'>thermostat.getEnergy()</div>
-      <div class='measure'>kW/HOUR</div>
+      <div class='number' id='energy' >thermostat.getEnergy()</div>
+      <div class='measure'></div>
     </div>
   </div>
 </div>
 
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+<script src= "node_modules/jquery/dist/jquery.min.js"></script>
 <script src="src/Thermostat.js"></script>
+<script src="Interface.js"></script>
 </html>

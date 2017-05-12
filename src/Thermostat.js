@@ -38,9 +38,9 @@ Thermostat.prototype.powerSavingModeOn = function () {
 
 Thermostat.prototype.isMaxTemp = function () {
   if (this.powerSavingMode === true) {
-    return this.temperature === this.MAX_TEMP_PSM_ON;
+    return this.MAX_TEMP_PSM_ON;
   }
-  return this.temperature === this.MAX_TEMP_PSM_OFF;
+  return this.MAX_TEMP_PSM_OFF;
  };
 
  Thermostat.prototype.getEnergy = function () {
