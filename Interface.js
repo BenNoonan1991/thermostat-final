@@ -41,6 +41,13 @@ $(document).ready(function() {
   //   });
   // });
 
+  displayWeather('London');
+  $('#select-city').submit(function(event) {
+    event.preventDefault();
+    var city = $('#current-city').val();
+    displayWeather(city);
+  });
+
   function displayWeather(city) {
     var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
     var token = '&appid=c0b6c7e54c92e31933df2561e6117e25';
