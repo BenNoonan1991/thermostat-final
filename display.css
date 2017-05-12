@@ -10,6 +10,14 @@
   color: red;
 }
 
+p.temp5 {
+  text-align: center;
+}
+
+p.temp6 {
+  text-align: center;
+}
+
 .container {
   width: 385px;
   height: 226px;
