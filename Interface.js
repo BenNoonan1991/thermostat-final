@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log($('#psm_off'));
   var thermostat = new Thermostat();
   updateTemperature();
 
@@ -19,19 +18,12 @@ $(document).ready(function() {
     updateTemperature();
   });
 
-  $('#reset').on('click', function(){
+  $('#reset').on('select', function(){
     thermostat.reset_temp();
     updateTemperature();
   });
 
-  $('#off').on('click', function(){
-    console.log('off')
-    thermostat.powerSavingModeOff();
-    updateTemperature();
-  });
-
-  $('#on').on('click', function(){
-    console.log('on')
+  $('#psm_on').on('click', function(){
     thermostat.powerSavingModeOn();
     updateTemperature();
   });
@@ -41,7 +33,5 @@ $(document).ready(function() {
     updateTemperature();
   });
 
-
-
-$('#energy').text(thermostat.getEnergy);
+  $('#energy').text(thermostat.getEnergy);
 });

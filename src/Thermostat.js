@@ -30,9 +30,7 @@ Thermostat.prototype.reset_temp = function () {
 };
 
 Thermostat.prototype.powerSavingModeOff = function () {
-  console.log(this.powerSavingMode);
   this.powerSavingMode = false;
-  console.log(this.powerSavingMode);
 };
 
 Thermostat.prototype.powerSavingModeOn = function () {
