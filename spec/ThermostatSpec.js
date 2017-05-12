@@ -18,7 +18,7 @@ describe('Thermostat', function() {
     thermostat.down();
     expect(thermostat.temperature).toEqual(19);
   });
-  
+
   it('returns error if temperature is less than 10', function() {
     for (var i = 0; i < 11; i++) {
       thermostat.down();
@@ -26,17 +26,7 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(10);
   });
 
-  it('powersaving mode is on by default', function() {
-    expect(thermostat.powerSavingModeOn()).toBe(true);
-  });
-
-  it('can turn off powersaving mode', function() {
-    thermostat.powerSavingModeOff();
-    expect(thermostat.powerSavingModeOn()).toBe(false);
-  });
-
   it('max temperature is 25 when PSM is on', function() {
-    thermostat.powerSavingModeOn();
     for (var i = 0; i < 6; i++) {
       thermostat.up();
     }

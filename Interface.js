@@ -1,13 +1,13 @@
 $(document).ready(function() {
+  console.log($('#psm_off'));
   var thermostat = new Thermostat();
+  updateTemperature();
+
 
   function updateTemperature(){
     $('#temp_number').text(thermostat.temperature);
   }
 
-  $(document).ready(function() {
-    updateTemperature();
-  });
 
   $('#up').on('click', function() {
     thermostat.up();
@@ -24,16 +24,24 @@ $(document).ready(function() {
     updateTemperature();
   });
 
-  $('#off').on('select', function(){
+  $('#off').on('click', function(){
+    console.log('off')
     thermostat.powerSavingModeOff();
     updateTemperature();
+  });
 
-  $('#on').on('select', function(){
+  $('#on').on('click', function(){
+    console.log('on')
     thermostat.powerSavingModeOn();
     updateTemperature();
   });
+
+  $('#psm_off').on('click', function(){
+    thermostat.powerSavingModeOff();
+    updateTemperature();
   });
 
 
-  $('#energy').text(thermostat.getEnergy);
+
+$('#energy').text(thermostat.getEnergy);
 });
