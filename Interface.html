@@ -6,7 +6,12 @@
   </head>
 
 <link rel='stylesheet' href='./switch.css' >
-<h1>Power Saving Mode</h1>
+<script src= "node_modules/jquery/dist/jquery.min.js"></script>
+<script src="src/Thermostat.js"></script>
+<script src="Interface.js"></script>
+  <script>  var thermostat = new Thermostat(); </script>
+<h1>Welcome to your thermostat page!</h1>
+<h3>Change the temperature, PSM, and check the weather all over the world.</h3>
 
 <br>
 <br>
@@ -16,6 +21,9 @@
 <button type="submit" id='reset' name = 'reset temp'>Reset Temperature</button><br>
 <button type='submit' id='psm_on' name = 'PSM on'> Switch on PSM</button><br>
 <button type="submit" id='psm_off' name='PSM off'>Switch off PSM</button><br>
+<section>
+  <h1> PSM on? </h1>  <span id="power-saving-status"></span>
+</section>
 <br>
 
 <section>
@@ -50,8 +58,4 @@
   </div>
 </div>
 
-
-<script src= "node_modules/jquery/dist/jquery.min.js"></script>
-<script src="src/Thermostat.js"></script>
-<script src="Interface.js"></script>
 </html>
